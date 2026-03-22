@@ -3,24 +3,21 @@ import { useState } from "react";
 const services = [
   {
     id: 1,
-    title: "Консультация",
-    short: "Персональная консультация по вашему запросу",
-    description:
-      "Проводим индивидуальный разбор вашей ситуации: задаём нужные вопросы, анализируем детали и предлагаем оптимальное решение. Встреча длится 60 минут — онлайн или офлайн.",
+    title: "Мой первый сайт",
+    short: "Мой первый сайт",
+    description: "Мой первый сайт",
   },
   {
     id: 2,
-    title: "Разработка",
-    short: "Создаём решение под ваши задачи",
-    description:
-      "Разрабатываем продукт с нуля по вашим требованиям: от концепции до готового результата. Фиксируем сроки и стоимость заранее, чтобы не было сюрпризов.",
+    title: "Мой первый сайт",
+    short: "Мой первый сайт",
+    description: "Мой первый сайт",
   },
   {
     id: 3,
-    title: "Поддержка",
-    short: "Сопровождение и обслуживание",
-    description:
-      "Берём на себя техническую поддержку вашего проекта: отвечаем на вопросы, вносим правки и обновления. Работаем на постоянной основе — вы всегда на связи с командой.",
+    title: "Мой первый сайт",
+    short: "Мой первый сайт",
+    description: "Мой первый сайт",
   },
 ];
 
@@ -32,14 +29,14 @@ export default function Featured() {
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
           src="/images/woman-horse.jpg"
-          alt="Наши услуги"
+          alt="Мой первый сайт"
           className="w-full h-full object-cover"
         />
       </div>
       <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Что мы предлагаем</h3>
+        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Мой первый сайт</h3>
         <p className="text-2xl lg:text-4xl mb-10 text-neutral-900 leading-tight">
-          Нажмите на услугу — и узнайте подробнее
+          Мой первый сайт
         </p>
         <div className="flex flex-col gap-4">
           {services.map((service) => (
