@@ -7,20 +7,7 @@ export default function Header({ className }: HeaderProps) {
     <header className={`absolute top-0 left-0 right-0 z-10 p-6 ${className ?? ""}`}>
       <div className="flex justify-between items-center">
         <div className="text-white text-sm uppercase tracking-wide">Smoner New</div>
-        <nav className="flex gap-8">
-          <a
-            href="#services"
-            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
-          >
-            Мой первый сайт
-          </a>
-          <a
-            href="#contact"
-            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
-          >
-            Мой первый сайт
-          </a>
-        </nav>
+        
       </div>
     </header>
   );
