@@ -1,22 +1,69 @@
+import { useState } from "react";
+
+const services = [
+  {
+    id: 1,
+    title: "Консультация",
+    short: "Персональная консультация по вашему запросу",
+    description:
+      "Проводим индивидуальный разбор вашей ситуации: задаём нужные вопросы, анализируем детали и предлагаем оптимальное решение. Встреча длится 60 минут — онлайн или офлайн.",
+  },
+  {
+    id: 2,
+    title: "Разработка",
+    short: "Создаём решение под ваши задачи",
+    description:
+      "Разрабатываем продукт с нуля по вашим требованиям: от концепции до готового результата. Фиксируем сроки и стоимость заранее, чтобы не было сюрпризов.",
+  },
+  {
+    id: 3,
+    title: "Поддержка",
+    short: "Сопровождение и обслуживание",
+    description:
+      "Берём на себя техническую поддержку вашего проекта: отвечаем на вопросы, вносим правки и обновления. Работаем на постоянной основе — вы всегда на связи с командой.",
+  },
+];
+
 export default function Featured() {
+  const [openId, setOpenId] = useState<number | null>(null);
+
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
+    <div id="services" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
           src="/images/woman-horse.jpg"
-          alt="Woman on horse in countryside"
+          alt="Наши услуги"
           className="w-full h-full object-cover"
         />
       </div>
       <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Функции, которые не стоят на месте</h3>
-        <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
-          Не просто список возможностей — живые, дышащие акценты. Каждая функция адаптируется к движению, контексту и настроению,
-          оживляя продукт с первого взгляда.
+        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Что мы предлагаем</h3>
+        <p className="text-2xl lg:text-4xl mb-10 text-neutral-900 leading-tight">
+          Нажмите на услугу — и узнайте подробнее
         </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Подробнее
-        </button>
+        <div className="flex flex-col gap-4">
+          {services.map((service) => (
+            <div key={service.id} className="border border-neutral-200">
+              <button
+                onClick={() => setOpenId(openId === service.id ? null : service.id)}
+                className="w-full flex justify-between items-center px-5 py-4 text-left bg-white hover:bg-neutral-50 transition-colors duration-200 cursor-pointer"
+              >
+                <div>
+                  <span className="font-semibold text-neutral-900 uppercase tracking-wide text-sm">{service.title}</span>
+                  <p className="text-neutral-500 text-sm mt-0.5">{service.short}</p>
+                </div>
+                <span className="text-2xl text-neutral-400 ml-4 select-none">
+                  {openId === service.id ? "−" : "+"}
+                </span>
+              </button>
+              {openId === service.id && (
+                <div className="px-5 py-4 bg-neutral-50 border-t border-neutral-200 text-neutral-700 text-sm leading-relaxed">
+                  {service.description}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
