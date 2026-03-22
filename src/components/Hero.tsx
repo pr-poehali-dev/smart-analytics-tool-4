@@ -36,7 +36,7 @@ export default function Hero() {
           href="#services"
           className="inline-block mt-10 border border-white text-white px-8 py-3 text-sm uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-300"
         >
-          Мой первый сайт
+          Тык
         </a>
       </div>
     </div>
